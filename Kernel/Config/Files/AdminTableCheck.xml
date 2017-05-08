@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="1.0" init="Config">
+    <ConfigItem Name="AdminTableCheck::Debug" Required="0" Valid="1">
+        <Description Translatable="1">Enable/Disable debugging feature.</Description>
+        <Group>AdminTableCheck</Group>
+        <SubGroup>Core</SubGroup>
+        <Setting>
+            <Option SelectedID="0">
+                <Item Key="0" Translatable="1">No</Item>
+                <Item Key="1" Translatable="1">Yes</Item>
+            </Option>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="Frontend::Module###AdminTableCheck" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the admin table check.</Description>
+        <Group>AdminTableCheck</Group>
+        <SubGroup>Frontend::Admin::ModuleRegistration</SubGroup>
+        <Setting>
+            <FrontendModuleReg>
+                <Group>admin</Group>
+                <Description Translatable="1">Check tables</Description>
+                <Title Translatable="1">Check tables</Title>
+                <NavBarName>Admin</NavBarName>
+                <NavBarModule>
+                    <Module>Kernel::Output::HTML::NavBar::ModuleAdmin</Module>
+                    <Name Translatable="1">Check tables</Name>
+                    <Description Translatable="1">Check tables</Description>
+                    <Block>System</Block>
+                    <Prio>99102</Prio>
+                </NavBarModule>
+            </FrontendModuleReg>
+        </Setting>
+    </ConfigItem>
+</otrs_config>
